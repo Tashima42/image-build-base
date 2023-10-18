@@ -19,5 +19,5 @@ jobs:
         run: |
           OS=$(uname -s)
           ARCH=$(uname -m)
-          if [ ARCH == "x86_64"]; ARCH="amd64";fi
+          [[ $ARCH="x86_64" ]] && ARCH="amd64"
           rke2_release-${OS,,}-${ARCH} image-build-base-release
